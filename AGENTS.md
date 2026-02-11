@@ -12,4 +12,4 @@ We learn together: if an agent finds something especially interesting, unexpecte
 
 ## Lessons
 
-- Add notable discoveries and hard-won lessons here as short, practical notes.
+- **Mistral model IDs ≠ docs URL slugs.** The Mistral docs URL for a model (e.g. `docs.mistral.ai/models/mistral-large-3-25-12`) uses a different format than the API model ID (`mistral-large-2512`). API IDs follow `{family}-{YYMM}`. Always verify model IDs against the [changelog](https://docs.mistral.ai/getting-started/changelog/) or the models list API, not the URL path.
