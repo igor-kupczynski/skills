@@ -12,6 +12,7 @@ Companion to [SKILL.md](SKILL.md). Covers production operational concerns: timeo
 | Truncated JSON in structured output | Token limit hit before schema completion | Increase `max_tokens`; simplify schema; shorten prompt |
 | Slow first token on vision requests | Large image payload processing | Resize images before encoding; reduce image count; try URL instead of base64 |
 | Intermittent 500 errors under load | Rate limiting or transient server errors | Enable SDK retry with exponential backoff (see SKILL.md Error Handling) |
+| HTTP 502 Bad Gateway (Cloudflare HTML page) on multimodal requests; `curl` succeeds with the same payload | HTTP client auto-negotiating HTTP/3 (QUIC) with Cloudflare edge — the h3 transport path fails on large image payloads while h2 works | Use an HTTP client that only advertises HTTP/2 or HTTP/1.1 via ALPN. Note: some clients' h3 opt-out flags do not reliably prevent the upgrade. Verify with network-level diagnostics (check negotiated protocol, remote address) |
 
 ### Debugging Checklist
 
