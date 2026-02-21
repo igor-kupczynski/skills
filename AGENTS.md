@@ -13,3 +13,4 @@ We learn together: if an agent finds something especially interesting, unexpecte
 ## Lessons
 
 - **Mistral model IDs ≠ docs URL slugs.** The Mistral docs URL for a model (e.g. `docs.mistral.ai/models/mistral-large-3-25-12`) uses a different format than the API model ID (`mistral-large-2512`). API IDs follow `{family}-{YYMM}`. Always verify model IDs against the [changelog](https://docs.mistral.ai/getting-started/changelog/) or the models list API, not the URL path.
+- **Mistral gateway timeout ~90-120s.** Non-streaming chat completion requests that run longer than ~90-120 seconds get silently terminated (connection reset, not an HTTP error). Always use `stream: true` for long-running completions (large context, vision, high `max_tokens`).
