@@ -1,0 +1,4 @@
+interface:
+  display_name: "Crossplane"
+  short_description: "Draft and review Crossplane configs"
+  default_prompt: "Use $crossplane to design, review, or troubleshoot Crossplane resources using the upstream docs as source of truth."
