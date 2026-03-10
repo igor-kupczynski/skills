@@ -62,7 +62,7 @@ spec:
             inline: |
               def compose(req, rsp):
                   rsp.desired.resources["bucket"].resource.update({
-                      "apiVersion": "s3.aws.m.crossplane.io/v1alpha1",
+                      "apiVersion": "s3.aws.m.upbound.io/v1beta1",
                       "kind": "Bucket",
                       "metadata": {"name": "setup-bucket"},
                       "spec": {"forProvider": {"region": "us-east-1"}}

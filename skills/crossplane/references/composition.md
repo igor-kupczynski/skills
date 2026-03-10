@@ -97,7 +97,7 @@ spec:
         resources:
           - name: rds-instance
             base:
-              apiVersion: rds.aws.m.crossplane.io/v1alpha1
+              apiVersion: rds.aws.m.upbound.io/v1beta1
               kind: Instance
               spec:
                 forProvider:
